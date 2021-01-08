@@ -11,7 +11,7 @@ const cookieJar = new tough.CookieJar();
 let data = {
 	'client_id': 'play-valorant-web-prod',
         'nonce': '1',
-        'redirect_uri': 'https://beta.playvalorant.com/opt_in',
+        'redirect_uri': 'https://playvalorant.com/opt_in',
         'response_type': 'token id_token',
 };
 
@@ -29,7 +29,7 @@ axios.post('https://auth.riotgames.com/api/v1/authorization', data, {jar: cookie
     .then(response=>{
       
       let uri = response.data.response.parameters.uri;
-      let strTokens = uri.replace('https://beta.playvalorant.com/opt_in#', '').split('&');
+      let strTokens = uri.replace('https://playvalorant.com/opt_in#', '').split('&');
 
       let arrayTokens = {};
 
